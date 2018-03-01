@@ -1,4 +1,5 @@
-﻿using PdfSharp.Drawing;
+﻿using Newtonsoft.Json;
+using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -17,6 +20,8 @@ namespace MaverikDesktop.Views
     {
         private Models.ColaDeCarga colaDeCarga1 = new Models.ColaDeCarga();
         public Models.ColaDeCarga ColaDeCarga1 { get => colaDeCarga1; set => colaDeCarga1 = value; }
+        private const string URL = "http://maverik-project.com";
+        private string urlParameters = "/api/v1/rutas/generar_cola_de_carga";
 
         public ColaDeCarga(Models.ColaDeCarga value)
         {
@@ -207,6 +212,41 @@ namespace MaverikDesktop.Views
             string pdfFilename = "ColaDeCarga.pdf";
             pdf.Save(pdfFilename);
             System.Diagnostics.Process.Start(pdfFilename);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            /*HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(URL);
+
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            //This code lists the RESTful service response//
+            var response = client.GetAsync(urlParameters).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = response.Content.ReadAsStringAsync();
+                Models.RootObject dataObject = JsonConvert.DeserializeObject<Models.RootObject>(jsonString.Result);
+                ListaCamiones listaCamiones = new ListaCamiones(dataObject);
+                listaCamiones.Show();
+                this.Close();
+            }
+            else
+            {
+                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+            }*/
         }
     }
 }

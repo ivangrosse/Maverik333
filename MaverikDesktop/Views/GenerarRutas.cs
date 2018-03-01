@@ -41,12 +41,24 @@ namespace MaverikDesktop.Views
                 Models.RootObject dataObject = JsonConvert.DeserializeObject<Models.RootObject>(jsonString.Result);            
                 ListaCamiones listaCamiones = new ListaCamiones(dataObject);
                 listaCamiones.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {
                 Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
             }
+        }
+
+        private void GenerarRutas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }

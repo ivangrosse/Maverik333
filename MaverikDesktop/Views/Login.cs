@@ -63,5 +63,10 @@ namespace MaverikDesktop.Views
             contadorContraseña += 1;
             contraseñaUsuario.UseSystemPasswordChar = true;
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

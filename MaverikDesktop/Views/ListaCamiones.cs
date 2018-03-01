@@ -46,6 +46,7 @@ namespace MaverikDesktop.Views
             }
 
             ColaDeCarga colaDeCarga = new ColaDeCarga(colaDeCarga2);
+            colaDeCarga.Width = 1200;
             colaDeCarga.Show();
         }
 
@@ -53,7 +54,7 @@ namespace MaverikDesktop.Views
         {
             string unidad = "";
             List<Button> buttons = new List<Button>();
-            int x = 50; int y = 50; int contador = 0;
+            int x = 50; int y = 75; int contador = 0;
             foreach (Models.ColaDeCarga cdc in colaDeCarga1.cola_de_carga)
             {
 
@@ -83,6 +84,18 @@ namespace MaverikDesktop.Views
 
                 contador++;
             }
-        } 
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            GenerarRutas generarRutas = new GenerarRutas();
+            generarRutas.Show();
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
