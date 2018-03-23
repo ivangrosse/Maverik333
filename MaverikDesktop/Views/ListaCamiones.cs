@@ -17,9 +17,17 @@ namespace MaverikDesktop.Views
         public Models.RootObject ColaDeCarga1 { get => colaDeCarga1; set => colaDeCarga1 = value; }
         private Models.ColaDeCarga colaDeCarga2 = new Models.ColaDeCarga();
         public Models.ColaDeCarga ColaDeCarga2 { get => colaDeCarga2; set => colaDeCarga2 = value; }
+        private string token1;
+        private string token2;
+        private string token3;
+        private string token4;
 
-        public ListaCamiones(Models.RootObject value)
+        public ListaCamiones(Models.RootObject value, string uid, string expiry, string clientheader, string accesstoken)
         {
+            token1 = uid;
+            token2 = expiry;
+            token3 = clientheader;
+            token4 = accesstoken;
             InitializeComponent();
             ColaDeCarga1 = value;
 
@@ -88,7 +96,7 @@ namespace MaverikDesktop.Views
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            GenerarRutas generarRutas = new GenerarRutas();
+            GenerarRutas generarRutas = new GenerarRutas(token1,token2,token3,token4);
             generarRutas.Show();
             this.Close();
         }
