@@ -31,7 +31,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.nombreUsuario = new System.Windows.Forms.TextBox();
             this.contraseñaUsuario = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -75,19 +74,9 @@
             this.contraseñaUsuario.TabIndex = 2;
             this.contraseñaUsuario.Text = "Contraseña";
             this.contraseñaUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.contraseñaUsuario.UseSystemPasswordChar = true;
             this.contraseñaUsuario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contraseñaUsuario_MouseClick);
             this.contraseñaUsuario.TextChanged += new System.EventHandler(this.contraseñaUsuario_TextChanged);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(85, 278);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(131, 13);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "¿Olvidaste tu contraseña?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label1
             // 
@@ -113,10 +102,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 321);
+            this.ClientSize = new System.Drawing.Size(294, 275);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.contraseñaUsuario);
             this.Controls.Add(this.nombreUsuario);
             this.Controls.Add(this.button1);
@@ -133,7 +121,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox nombreUsuario;
         private System.Windows.Forms.TextBox contraseñaUsuario;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

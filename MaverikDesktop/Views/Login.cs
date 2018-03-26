@@ -68,21 +68,26 @@ namespace MaverikDesktop.Views
                 this.Hide();
                 generarRutas.Show();
             }
-            else           
-                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);        
+            else {            
+                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+                MessageBox.Show("Usuario o contraseña incorrectos.", "Error credenciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                nombreUsuario.Clear();
+                contraseñaUsuario.Clear();
+                nombreUsuario.Focus();
+            }
         }
 
 
 
 
-/*GenerarRutas generarRutas = new GenerarRutas();
-    this.Hide();
-    generarRutas.Show();
-    es lo q sigue, dejalo.
+        /*GenerarRutas generarRutas = new GenerarRutas();
+            this.Hide();
+            generarRutas.Show();
+            es lo q sigue, dejalo.
 
-}*/
+        }*/
 
-private void contraseñaUsuario_TextChanged(object sender, EventArgs e)
+        private void contraseñaUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }
