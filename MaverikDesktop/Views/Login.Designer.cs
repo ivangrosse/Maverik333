@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.button1 = new System.Windows.Forms.Button();
             this.nombreUsuario = new System.Windows.Forms.TextBox();
             this.contraseñaUsuario = new System.Windows.Forms.TextBox();
@@ -40,8 +39,9 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.Location = new System.Drawing.Point(94, 316);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 39);
@@ -55,10 +55,11 @@
             this.nombreUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nombreUsuario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.nombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.nombreUsuario.Location = new System.Drawing.Point(71, 229);
             this.nombreUsuario.Name = "nombreUsuario";
-            this.nombreUsuario.Size = new System.Drawing.Size(158, 20);
+            this.nombreUsuario.Size = new System.Drawing.Size(158, 21);
             this.nombreUsuario.TabIndex = 1;
             this.nombreUsuario.Text = "Nombre de Usuario";
             this.nombreUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -70,10 +71,11 @@
             this.contraseñaUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.contraseñaUsuario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.contraseñaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contraseñaUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.contraseñaUsuario.Location = new System.Drawing.Point(71, 276);
             this.contraseñaUsuario.Name = "contraseñaUsuario";
-            this.contraseñaUsuario.Size = new System.Drawing.Size(158, 20);
+            this.contraseñaUsuario.Size = new System.Drawing.Size(158, 21);
             this.contraseñaUsuario.TabIndex = 2;
             this.contraseñaUsuario.Text = "Contraseña";
             this.contraseñaUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -85,7 +87,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 183);
+            this.label1.Location = new System.Drawing.Point(55, 197);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 18);
             this.label1.TabIndex = 4;
@@ -95,17 +97,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(89, 146);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(71, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 24);
+            this.label2.Size = new System.Drawing.Size(158, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "¡Bienvenido!";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 2);
+            this.pictureBox1.Image = global::MaverikDesktop.Properties.Resources.logo2;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(272, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -116,6 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(294, 376);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -124,7 +127,6 @@
             this.Controls.Add(this.nombreUsuario);
             this.Controls.Add(this.button1);
             this.Name = "Login";
-            this.Text = "Iniciar Sesión - Maverik";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -24,6 +24,8 @@ namespace MaverikDesktop.Views
         public Login()
         {
             InitializeComponent();
+            this.MaximumSize = new Size(310, 415);
+            this.MinimumSize= new Size(310,415);
         }
 
         private void nombreUsuario_TextChanged(object sender, EventArgs e)

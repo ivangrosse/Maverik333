@@ -37,7 +37,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(188, 9);
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(107, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(488, 25);
             this.label1.TabIndex = 0;
@@ -47,28 +48,33 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(301, 34);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(178, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(262, 18);
+            this.label2.Size = new System.Drawing.Size(339, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "(seleccione una unidad para continuar)";
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(775, 288);
+            this.backButton.BackColor = System.Drawing.Color.OliveDrab;
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.backButton.Location = new System.Drawing.Point(596, 396);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.Size = new System.Drawing.Size(82, 28);
             this.backButton.TabIndex = 2;
             this.backButton.Text = "Volver";
-            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // ListaCamiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 323);
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ClientSize = new System.Drawing.Size(690, 436);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

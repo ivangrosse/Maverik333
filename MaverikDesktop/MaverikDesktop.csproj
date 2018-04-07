@@ -103,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\ColaDeCarga.resx">
       <DependentUpon>ColaDeCarga.cs</DependentUpon>
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\logo.png" />
+    <Content Include="Images\logo2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

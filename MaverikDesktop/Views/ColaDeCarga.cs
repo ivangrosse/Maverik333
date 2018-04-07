@@ -27,6 +27,8 @@ namespace MaverikDesktop.Views
         {
             InitializeComponent();
             ColaDeCarga1 = value;
+            this.MaximumSize = new Size(1176, 508);
+            this.MinimumSize = new Size(1176, 508);
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -46,7 +48,8 @@ namespace MaverikDesktop.Views
                                     detalleRemito.Text = "Detalle de Remito: " + r.id.ToString() +
                                     "\n" + "Estado: " + r.estado_remito +
                                     "\n" + "Ubicacion: " + r.ubicacion_remito_domicilio +
-                                    "\n" + "Zona: " + r.zona_remito_descripcion;                                    
+                                    "\n" + "Zona: " + r.zona_remito_descripcion;
+                                    detalleRemito.Font= new Font(detalleRemito.Font.FontFamily, 13);
                             }
                         
                     }
@@ -106,6 +109,7 @@ namespace MaverikDesktop.Views
                             }                            
                             newButton.Font = new Font(newButton.Font.FontFamily, 15);
                             newButton.Location = new Point(x, y);
+                            newButton.BackColor = Color.LightGreen;
                             newButton.Name = r.id.ToString();
                             newButton.Click += Button_Click;
                             newButton.Size = new Size(60, 30);

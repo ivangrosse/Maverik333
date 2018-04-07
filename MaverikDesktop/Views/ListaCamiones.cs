@@ -30,6 +30,8 @@ namespace MaverikDesktop.Views
             token4 = accesstoken;
             InitializeComponent();
             ColaDeCarga1 = value;
+            this.MaximumSize = new Size(706, 475);
+            this.MinimumSize = new Size(706, 475);
 
         }
 
@@ -73,6 +75,7 @@ namespace MaverikDesktop.Views
                 }
                 newButton.Text = "Unidad " + unidad;
                 newButton.Font = new Font(newButton.Font.FontFamily, 13);
+                newButton.BackColor = Color.LightGreen;
                 newButton.Location = new Point(x, y);
                 newButton.Name = unidad;
                 newButton.Click += Button_Click;

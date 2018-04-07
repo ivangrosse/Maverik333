@@ -31,6 +31,8 @@ namespace MaverikDesktop.Views
             token3 = clientheader;
             token4 = accesstoken;
             InitializeComponent();
+            this.MaximumSize = new Size(300, 169);
+            this.MinimumSize = new Size(300, 169);
         }
 
         private void button1_Click(object sender, EventArgs e)
