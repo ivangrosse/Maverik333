@@ -21,13 +21,15 @@ namespace MaverikDesktop.Views
         private string token2;
         private string token3;
         private string token4;
+        private string usuario;
 
-        public ListaCamiones(Models.RootObject value, string uid, string expiry, string clientheader, string accesstoken)
+        public ListaCamiones(Models.RootObject value, string uid, string expiry, string clientheader, string accesstoken, string nombreUser)
         {
             token1 = uid;
             token2 = expiry;
             token3 = clientheader;
             token4 = accesstoken;
+            usuario = nombreUser;
             InitializeComponent();
             ColaDeCarga1 = value;
             this.MaximumSize = new Size(706, 475);
@@ -55,7 +57,7 @@ namespace MaverikDesktop.Views
 
             }
 
-            ColaDeCarga colaDeCarga = new ColaDeCarga(colaDeCarga2);
+            ColaDeCarga colaDeCarga = new ColaDeCarga(colaDeCarga2, usuario);
             colaDeCarga.Width = 1200;
             colaDeCarga.Show();
         }
@@ -99,7 +101,7 @@ namespace MaverikDesktop.Views
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            GenerarRutas generarRutas = new GenerarRutas(token1,token2,token3,token4);
+            GenerarRutas generarRutas = new GenerarRutas(token1,token2,token3,token4, usuario);
             generarRutas.Show();
             this.Close();
         }

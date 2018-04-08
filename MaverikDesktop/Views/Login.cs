@@ -66,7 +66,7 @@ namespace MaverikDesktop.Views
                 string clientheader = headerValues3.FirstOrDefault();
                 string accesstoken = headerValues4.FirstOrDefault();
                         
-                GenerarRutas generarRutas = new GenerarRutas(uid,expiry,clientheader,accesstoken);
+                GenerarRutas generarRutas = new GenerarRutas(uid,expiry,clientheader,accesstoken,nombreUsuario.Text);
                 this.Hide();
                 generarRutas.Show();
             }

@@ -23,13 +23,15 @@ namespace MaverikDesktop.Views
         private string token2;
         private string token3;
         private string token4;
+        private string usuario;
 
-        public GenerarRutas(string uid,string expiry, string clientheader, string accesstoken)
+        public GenerarRutas(string uid,string expiry, string clientheader, string accesstoken, string nombreUser)
         {
             token1 = uid;
             token2 = expiry;
             token3 = clientheader;
             token4 = accesstoken;
+            usuario = nombreUser;
             InitializeComponent();
             this.MaximumSize = new Size(300, 169);
             this.MinimumSize = new Size(300, 169);
@@ -54,7 +56,7 @@ namespace MaverikDesktop.Views
             {
                 var jsonString = response.Content.ReadAsStringAsync();
                 Models.RootObject dataObject = JsonConvert.DeserializeObject<Models.RootObject>(jsonString.Result);            
-                ListaCamiones listaCamiones = new ListaCamiones(dataObject,token1,token2,token3,token4);
+                ListaCamiones listaCamiones = new ListaCamiones(dataObject,token1,token2,token3,token4,usuario);
                 listaCamiones.Show();
                 this.Close();
             }

@@ -22,10 +22,12 @@ namespace MaverikDesktop.Views
         public Models.ColaDeCarga ColaDeCarga1 { get => colaDeCarga1; set => colaDeCarga1 = value; }
         private const string URL = "http://maverik-project.com";
         private string urlParameters = "/api/v1/rutas/generar_cola_de_carga";
+        private string usuario;
 
-        public ColaDeCarga(Models.ColaDeCarga value)
+        public ColaDeCarga(Models.ColaDeCarga value, string nombreUser)
         {
             InitializeComponent();
+            usuario = nombreUser;
             ColaDeCarga1 = value;
             this.MaximumSize = new Size(1176, 508);
             this.MinimumSize = new Size(1176, 508);
@@ -135,19 +137,26 @@ namespace MaverikDesktop.Views
         {
             PdfDocument pdf = new PdfDocument();
             pdf.Info.Title = "Cola de Carga";
+
             PdfPage pdfPage = pdf.AddPage();
             XGraphics graph = XGraphics.FromPdfPage(pdfPage);
             XFont font = new XFont("Verdana", 10, XFontStyle.Bold);
             int unidad = 0;
-            foreach(Models.Remito r in colaDeCarga1.remitos)
+            foreach (Models.Remito r in colaDeCarga1.remitos)
             {
-                unidad = r.unidad_de_distribucion_id;                
+                unidad = r.unidad_de_distribucion_id;
             }
-            graph.DrawString("Cola de Carga" , new XFont("Verdana", 18, XFontStyle.Bold),
+            graph.DrawString("Cola de Carga", new XFont("Verdana", 18, XFontStyle.Bold),
                 XBrushes.Black, new XRect(0, -400, pdfPage.Width.Point, pdfPage.Height.Point),
                 XStringFormats.Center);
-            graph.DrawString("Unidad de Distribucion "+unidad, new XFont("Verdana", 10, XFontStyle.Bold),
-                XBrushes.Black, new XRect(0, -350, pdfPage.Width.Point, pdfPage.Height.Point),
+            graph.DrawString("Usuario: " + usuario, new XFont("Verdana", 9),
+                XBrushes.Black, new XRect(-225, -380, pdfPage.Width.Point, pdfPage.Height.Point),
+                XStringFormats.Center);
+            graph.DrawString("Fecha y Hora: " + System.DateTime.Now, new XFont("Verdana", 9),
+                XBrushes.Black, new XRect(-200, -360, pdfPage.Width.Point, pdfPage.Height.Point),
+                XStringFormats.Center);
+            graph.DrawString("Unidad de Distribucion: "+unidad, new XFont("Verdana", 12, XFontStyle.Bold),
+                XBrushes.Black, new XRect(0, -280, pdfPage.Width.Point, pdfPage.Height.Point),
                 XStringFormats.Center);
             int x = -200; int y = -200;
             int aux = 0;           
@@ -213,7 +222,9 @@ namespace MaverikDesktop.Views
                     }
                 }
             }            
-            string pdfFilename = "ColaDeCarga.pdf";
+            string pdfFilename = "ColaDeCarga_"+System.DateTime.Now.Day+"-"+System.DateTime.Now.Month+
+                "-"+System.DateTime.Now.Year +" ("+System.DateTime.Now.Hour+"hs "+System.DateTime.Now.Minute+
+                "min "+System.DateTime.Now.Second+"sec)"+".pdf";
             pdf.Save(pdfFilename);
             System.Diagnostics.Process.Start(pdfFilename);
         }
